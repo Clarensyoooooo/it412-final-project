@@ -10,9 +10,12 @@ const name = "Clarence Neil Meneses";
 const role = "IT Student \\ Full-Stack Developer";
 const location = "Tanauan City, Batangas";
 const email = "clarenceneilpamplona@gmail.com";
-const section = "[INSERT SECTION HERE]"; // <--- UPDATE THIS
+const section = "BA 4102"; // <--- UPDATE THIS
 const quote = "Leading Innovations, Transforming Lives, Building the Nation."; 
-const profileImage = '/profile.jpg'; 
+
+// --- IMAGES ---
+const profileLight = '/profile.jpg';      // Light Mode Image
+const profileDark = '/profile-dark.jpg';  // Dark Mode Image
 
 // --- ROUTES ---
 app.get('/', (req, res) => { res.send(renderHome()); });
@@ -43,7 +46,7 @@ function renderHome() {
             <header class="header-block">
                 <div class="header-top">
                     <div class="profile-left">
-                        <img src="${profileImage}" alt="Profile" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Clarence+Meneses&background=1A73E8&color=fff&size=200'">
+                        <img id="profile-pic" src="${profileLight}" alt="Profile" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Clarence+Meneses&background=1A73E8&color=fff&size=200'">
                         <div class="profile-details">
                             <h1>${name} <i data-feather="check-circle" class="verified-icon"></i></h1>
                             <div class="location"><i data-feather="map-pin" size="14"></i> ${location}</div>
@@ -56,7 +59,7 @@ function renderHome() {
                             <button id="darkModeToggle" class="icon-btn"><i data-feather="moon"></i></button>
                         </div>
                         <div class="hackathon-badge">
-                             <i data-feather="award"></i> Graduating soon (manifesting)
+                             <i data-feather="award"></i> Graduating Soon! (Manifesting)
                         </div>
                     </div>
                 </div>
@@ -71,7 +74,6 @@ function renderHome() {
             </header>
 
             <div class="main-grid">
-                
                 <div class="left-col">
                     <div class="card">
                         <div class="card-title"><i data-feather="user"></i> About</div>
@@ -87,22 +89,13 @@ function renderHome() {
                             <div class="card-title"><i data-feather="cpu"></i> Tech Stack</div>
                             <a href="/tech-stack" class="view-all">View All <i data-feather="chevron-right" size="12"></i></a>
                         </div>
-                        
                         <div class="stack-category">Frontend</div>
                         <div class="tags-wrapper">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">Bootstrap</span>
-                            <span class="tag">Figma</span>
+                            <span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span><span class="tag">Figma</span>
                         </div>
-
                         <div class="stack-category">Backend & Data</div>
                         <div class="tags-wrapper">
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Power BI</span>
+                            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">Power BI</span>
                         </div>
                     </div>
 
@@ -110,9 +103,7 @@ function renderHome() {
                         <div class="card-title"><i data-feather="coffee"></i> Beyond Coding</div>
                         <p>When not writing code, I focus on:</p>
                          <div class="tags-wrapper">
-                            <span class="tag">Digital Art</span>
-                            <span class="tag">Commissioned Painting</span>
-                            <span class="tag">Startup Culture</span>
+                            <span class="tag">Digital Art</span><span class="tag">Analytics</span><span class="tag">Startup Culture</span><span class="tag">Learning New Tech Stuff</span>
                          </div>
                     </div>
                 </div>
@@ -125,16 +116,14 @@ function renderHome() {
 
                     <div class="card">
                         <div class="card-title"><i data-feather="briefcase"></i> Experience</div>
-                        
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
-                                <div class="job-role">Sole Developer</div>
+                                <div class="job-role">Developer</div>
                                 <div class="job-company">Sto. Tomas PDAO (Capstone)</div>
                                 <div class="job-year">2025</div>
                             </div>
                         </div>
-
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
@@ -143,7 +132,6 @@ function renderHome() {
                                 <div class="job-year">2025</div>
                             </div>
                         </div>
-
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
@@ -152,22 +140,20 @@ function renderHome() {
                                 <div class="job-year">2024</div>
                             </div>
                         </div>
-
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
-                                <div class="job-role">IT Student</div>
+                                <div class="job-role">Student</div>
                                 <div class="job-company">Batangas State University</div>
                                 <div class="job-year">2022</div>
                             </div>
                         </div>
-                        
                          <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <div class="job-role">Hello World! 👋</div>
                                 <div class="job-company">Wrote my first line of code</div>
-                                <div class="job-year">2020</div>
+                                <div class="job-year">2022</div>
                             </div>
                         </div>
                     </div>
@@ -182,7 +168,7 @@ function renderHome() {
                 <a href="#" class="project-card">
                     <div class="project-top">
                         <h3>PDAO Analytics Portal</h3>
-                        <span class="job-year">pdao.gov.ph</span>
+                        <span class="job-year">pdaohelps.gov.ph</span>
                     </div>
                     <p>Full-stack system with GIS mapping and analytics dashboard for government use.</p>
                     <div class="tags-wrapper" style="margin-top:0.5rem">
@@ -220,7 +206,6 @@ function renderHome() {
                         <div style="font-size:0.8rem; color:var(--text-muted)">BatStateU & HCMUTE</div>
                     </div>
                 </div>
-                
                 <div class="card">
                      <div class="card-title"><i data-feather="message-square"></i> Recommendations</div>
                      <div style="height: 120px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); gap:5px;">
@@ -247,7 +232,7 @@ function renderHome() {
                 </div>
                 <div class="footer-col">
                     <small><i data-feather="mic"></i> Availability</small>
-                    <div class="footer-link-item">Open for Freelance</div>
+                    <div class="footer-link-item">Open for Inquiries</div>
                 </div>
                 <div class="footer-col">
                     <small><i data-feather="mail"></i> Contact</small>
@@ -258,7 +243,7 @@ function renderHome() {
 
             <footer class="copyright">
                 &copy; 2025 ${name}. All rights reserved.<br>
-                <span style="font-size:0.7rem; opacity:0.5; margin-top:5px; display:block;">${quote}</span>
+                <span style="font-size:0.7rem; opacity:0.5; margin-top:5px; display:block;">${section}</span>
             </footer>
         </div>
 
@@ -273,33 +258,19 @@ function renderTechStack() {
         <div class="stack-section">
             <div class="stack-title">Frontend</div>
             <div class="pill-grid">
-                <div class="pill-large">JavaScript</div>
-                <div class="pill-large">HTML5</div>
-                <div class="pill-large">CSS3</div>
-                <div class="pill-large">Bootstrap</div>
-                <div class="pill-large">Tailwind CSS</div>
-                <div class="pill-large">Figma</div>
+                <div class="pill-large">JavaScript</div><div class="pill-large">HTML5</div><div class="pill-large">CSS3</div><div class="pill-large">Bootstrap</div><div class="pill-large">Tailwind CSS</div><div class="pill-large">Figma</div>
             </div>
         </div>
-
         <div class="stack-section">
             <div class="stack-title">Backend</div>
             <div class="pill-grid">
-                <div class="pill-large">PHP</div>
-                <div class="pill-large">Node.js</div>
-                <div class="pill-large">Express.js</div>
-                <div class="pill-large">Python</div>
-                <div class="pill-large">MySQL</div>
+                <div class="pill-large">PHP</div><div class="pill-large">Node.js</div><div class="pill-large">Express.js</div><div class="pill-large">Python</div><div class="pill-large">MySQL</div>
             </div>
         </div>
-        
          <div class="stack-section">
             <div class="stack-title">Data & Tools</div>
             <div class="pill-grid">
-                <div class="pill-large">Power BI</div>
-                <div class="pill-large">Git / GitHub</div>
-                <div class="pill-large">VS Code</div>
-                <div class="pill-large">Adobe Photoshop</div>
+                <div class="pill-large">Power BI</div><div class="pill-large">Git / GitHub</div><div class="pill-large">VS Code</div><div class="pill-large">Adobe Photoshop</div>
             </div>
         </div>
     `);
@@ -309,36 +280,19 @@ function renderProjects() {
     return renderInnerPage("Recent Projects", `
         <div class="project-grid">
             <div class="project-card">
-                <div class="project-top">
-                    <h3>PDAO Analytics Portal</h3>
-                    <span class="job-year">Government</span>
-                </div>
+                <div class="project-top"><h3>PDAO Analytics Portal</h3><span class="job-year">Government</span></div>
                 <p>A comprehensive system for the Persons with Disability Affairs Office. Features include client data management, GIS mapping for demographic analysis, and automated reporting.</p>
-                <div class="tags-wrapper" style="margin-top:1rem">
-                    <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">LeafletJS</span>
-                </div>
+                <div class="tags-wrapper" style="margin-top:1rem"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">LeafletJS</span></div>
             </div>
-
              <div class="project-card">
-                <div class="project-top">
-                    <h3>THEEA Agency UI Kit</h3>
-                    <span class="job-year">Figma</span>
-                </div>
+                <div class="project-top"><h3>THEEA Agency UI Kit</h3><span class="job-year">Figma</span></div>
                 <p>Designed the complete user interface and design system for an Australian tech consultancy. Focused on accessibility and clean aesthetic.</p>
-                <div class="tags-wrapper" style="margin-top:1rem">
-                    <span class="tag">UI/UX</span><span class="tag">Prototyping</span>
-                </div>
+                <div class="tags-wrapper" style="margin-top:1rem"><span class="tag">UI/UX</span><span class="tag">Prototyping</span></div>
             </div>
-
              <div class="project-card">
-                <div class="project-top">
-                    <h3>Digital Art Portfolio</h3>
-                    <span class="job-year">Creative</span>
-                </div>
+                <div class="project-top"><h3>Digital Art Portfolio</h3><span class="job-year">Creative</span></div>
                 <p>A collection of commissioned digital artwork for international clients, demonstrating attention to detail and creative direction.</p>
-                <div class="tags-wrapper" style="margin-top:1rem">
-                    <span class="tag">Photoshop</span><span class="tag">Digital Art</span>
-                </div>
+                <div class="tags-wrapper" style="margin-top:1rem"><span class="tag">Photoshop</span><span class="tag">Digital Art</span></div>
             </div>
         </div>
     `);
@@ -404,11 +358,8 @@ function renderInnerPage(title, content) {
                 <a href="/" class="back-link"><i data-feather="arrow-left"></i> Back to Home</a>
                 <button id="darkModeToggle" class="icon-btn"><i data-feather="moon"></i></button>
             </div>
-
             <h1 style="font-size: 2rem; margin-bottom: 2rem;">${title}</h1>
-            
             ${content}
-            
             <footer class="copyright" style="margin-top:4rem">
                 &copy; 2025 ${name}. All rights reserved.
             </footer>
@@ -419,47 +370,21 @@ function renderInnerPage(title, content) {
     `;
 }
 
-// --- CSS & SCRIPTS ---
-
 function getCSS() {
     return `
         :root {
-            --bg-page: #ffffff;
-            --bg-card: #ffffff;
-            --text-main: #111111;
-            --text-muted: #666666;
-            /* FIX: Darker border for visibility */
-            --border: #D1D5DB; 
-            --btn-black: #111111;
-            --btn-text: #ffffff;
-            --hover: #f3f4f6;
-            --badge-blue: #2563EB;
-            --banner-grad: linear-gradient(90deg, #7C3AED 0%, #2563EB 100%);
+            --bg-page: #ffffff; --bg-card: #ffffff; --text-main: #111111; --text-muted: #666666;
+            --border: #D1D5DB; --btn-black: #111111; --btn-text: #ffffff; --hover: #f3f4f6;
+            --badge-blue: #2563EB; --banner-grad: linear-gradient(90deg, #7C3AED 0%, #2563EB 100%);
         }
         body.dark {
-            --bg-page: #0a0a0a;
-            --bg-card: #0a0a0a;
-            --text-main: #ededed;
-            --text-muted: #a1a1a1;
-            --border: #333333;
-            --btn-black: #ffffff;
-            --btn-text: #000000;
-            --hover: #1f1f1f;
-            --badge-blue: #3B82F6;
-             --banner-grad: linear-gradient(90deg, #5B21B6 0%, #1E40AF 100%);
+            --bg-page: #0a0a0a; --bg-card: #0a0a0a; --text-main: #ededed; --text-muted: #a1a1a1;
+            --border: #333333; --btn-black: #ffffff; --btn-text: #000000; --hover: #1f1f1f;
+            --badge-blue: #3B82F6; --banner-grad: linear-gradient(90deg, #5B21B6 0%, #1E40AF 100%);
         }
-
-        body {
-            background-color: var(--bg-page);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 2rem;
-            transition: background 0.3s, color 0.3s;
-        }
+        body { background-color: var(--bg-page); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 2rem; transition: background 0.3s, color 0.3s; }
         .container { max-width: 1000px; margin: 0 auto; }
         a { text-decoration: none; color: inherit; }
-
         /* HEADER */
         .header-block { margin-bottom: 3rem; }
         .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
@@ -469,14 +394,8 @@ function getCSS() {
         .verified-icon { width: 20px; color: #3B82F6; fill: transparent; }
         .location { display: flex; align-items: center; gap: 5px; color: var(--text-muted); margin-top: 5px; font-size: 0.95rem; }
         .role { font-size: 1.1rem; margin-top: 5px; }
-        
         .profile-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-        .hackathon-badge {
-            background: var(--badge-blue); color: white;
-            padding: 0.6rem 1rem; border-radius: 8px;
-            font-weight: 600; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
-        }
+        .hackathon-badge { background: var(--badge-blue); color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
         .icon-btn { background: transparent; border: 1px solid var(--border); padding: 8px; border-radius: 50%; cursor: pointer; color: var(--text-main); }
         .header-bottom { display: flex; gap: 10px; flex-wrap: wrap; }
         .btn { display: flex; align-items: center; gap: 8px; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: 1px solid var(--border); transition: 0.2s; }
@@ -484,70 +403,47 @@ function getCSS() {
         .btn-white { background: var(--bg-card); color: var(--text-main); }
         .btn-white-wide { background: var(--bg-card); color: var(--text-main); flex-grow: 1; }
         .btn:hover { opacity: 0.8; transform: translateY(-1px); }
-
-        /* MAIN BENTO GRID */
+        /* MAIN GRID */
         .main-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; margin-bottom: 2rem; }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
-
         /* CARDS */
-        /* FIX: Added explicit border thickness */
         .card { margin-bottom: 2rem; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         .card-title { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem; }
         .view-all { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
         p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; margin-top: 0; }
         .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-
-        /* TECH STACK & TAGS */
+        /* TAGS */
         .stack-category { font-size: 0.8rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem; margin-top: 1rem; }
         .stack-category:first-of-type { margin-top: 0; }
         .tags-wrapper { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .tag { background: var(--hover); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; color: var(--text-main); }
         .tag-sm { background: transparent; border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
-
         /* BANNER */
-        .banner-card {
-            background: var(--banner-grad); color: white;
-            border-radius: 12px; padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
+        .banner-card { background: var(--banner-grad); color: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
         /* TIMELINE */
         .timeline-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; padding: 0.5rem; border-radius: 8px; transition: 0.2s; cursor: default; position: relative; }
         .timeline-item:hover { background: var(--hover); }
-        .timeline-item:not(:last-child)::after { 
-            content: ''; position: absolute; left: 11px; top: 22px; bottom: -20px; width: 1px; background: var(--border); z-index: 0; 
-        }
+        .timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 11px; top: 22px; bottom: -20px; width: 1px; background: var(--border); z-index: 0; }
         .timeline-dot { width: 8px; height: 8px; background: var(--text-main); border-radius: 50%; margin-top: 6px; z-index: 1; }
         .timeline-content { flex: 1; }
         .job-role { font-weight: 600; font-size: 1rem; }
         .job-company { color: var(--text-muted); font-size: 0.9rem; }
         .job-year { float: right; font-size: 0.8rem; font-weight: 600; opacity: 0.6; }
-
         /* PROJECTS GRID */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-        .project-card { 
-            background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: 0.2s; display: block;
-        }
+        .project-card { background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: 0.2s; display: block; }
         .project-card:hover { border-color: var(--text-muted); }
         .project-top { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 0.5rem; align-items: center; }
-
-        /* BOTTOM GRID (Certs/Recs) */
+        /* FOOTER */
         .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
         @media (max-width: 768px) { .bottom-grid { grid-template-columns: 1fr; } }
         .cert-item { margin-bottom: 1rem; }
-
-        /* FOOTER LINKS GRID */
-        .footer-links-grid { 
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; 
-            border-top: 1px solid var(--border); padding-top: 2rem; margin-bottom: 2rem;
-        }
+        .footer-links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; border-top: 1px solid var(--border); padding-top: 2rem; margin-bottom: 2rem; }
         @media (max-width: 768px) { .footer-links-grid { grid-template-columns: 1fr 1fr; } }
         .footer-col small { display: flex; align-items: center; gap: 5px; font-weight: 600; margin-bottom: 1rem; }
         .footer-link-item { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
         .footer-clickable:hover { color: var(--text-main); text-decoration:underline; }
-
-        /* FIX: Copyright Flex Center */
         .copyright { display: flex; flex-direction: column; align-items: center; text-align: center; color: var(--text-muted); font-size: 0.85rem; padding-bottom: 2rem; }
     `;
 }
@@ -558,10 +454,24 @@ function getScripts() {
         feather.replace();
         const toggle = document.getElementById('darkModeToggle');
         const body = document.body;
+        const profilePic = document.getElementById('profile-pic');
+
+        const imgLight = "${profileLight}";
+        const imgDark = "${profileDark}";
         
+        function updateImage(isDark) {
+            if(profilePic) {
+                profilePic.src = isDark ? imgDark : imgLight;
+            }
+        }
+
+        // CHECK LOCAL STORAGE ON LOAD
         if(localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark');
             if(toggle) toggle.innerHTML = '<i data-feather="sun"></i>';
+            updateImage(true);
+        } else {
+            updateImage(false);
         }
 
         if(toggle) {
@@ -570,10 +480,10 @@ function getScripts() {
                 const isDark = body.classList.contains('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
                 toggle.innerHTML = isDark ? '<i data-feather="sun"></i>' : '<i data-feather="moon"></i>';
+                updateImage(isDark);
                 feather.replace();
             });
         }
-        console.log("Rubric Requirement Check: Inspirational Quote - 'Leading Innovations, Transforming Lives, Building the Nation.'");
     </script>
     `;
 }
